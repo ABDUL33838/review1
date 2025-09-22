@@ -1,0 +1,151 @@
+/*
+ * Aesthetic Stylesheet
+ * -------------------
+ *
+ * This CSS file uses a premium color palette for a modern and clean look.
+ * Colors:
+ * - #1B262C (Deep Navy) - Primary background
+ * - #0F4C75 (Rich Blue) - Secondary background / Accents
+ * - #3282B8 (Muted Cyan) - Main text / Buttons
+ * - #BBE1FA (Soft Blue) - Lighter text / Highlights
+ * - #E5D5B8 (Subtle Gold) - Accent for hover / Special elements
+ *
+ * Typography:
+ * - 'Roboto', sans-serif for main content
+ * - 'Montserrat', sans-serif for headings
+ *
+ */
+
+/* General body styles for a clean slate */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #BBE1FA;
+  background-color: #1B262C;
+  line-height: 1.6;
+  margin: 0;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* --- Logo & Animations --- */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 0.3s ease-in-out;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #0F4C75);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #3282B8);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* --- Header & Navigation --- */
+.App-header {
+  background-color: #0F4C75;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.App-header nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.App-header nav ul li a {
+  color: #BBE1FA;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.App-header nav ul li a:hover {
+  color: #E5D5B8; /* Subtle gold for hover */
+}
+
+/* --- About Us Section --- */
+.about-us {
+  background-color: #2b3941; /* A slightly lighter shade of the main background */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: left;
+  border: 1px solid #0F4C75; /* A thin border for definition */
+}
+
+.about-us h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #BBE1FA;
+  border-bottom: 2px solid #3282B8;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.about-us p,
+.about-us .content {
+  font-family: 'Roboto', sans-serif;
+  color: #BBE1FA;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* --- Other general elements --- */
+.card {
+  padding: 2em;
+  background-color: #0F4C75;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #BBE1FA;
+}
+
+.read-the-docs {
+  color: #3282B8;
+  font-style: italic;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.read-the-docs:hover {
+  color: #E5D5B8;
+}
+
+/* For the typography to work, add these links to your HTML's <head> section */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+*/
