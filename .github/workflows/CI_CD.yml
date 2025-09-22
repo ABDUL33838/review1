@@ -23,20 +23,19 @@ jobs:
 
       - name: Install Frontend Dependencies
         run: npm install
+        working-directory: ./propertymanagementsystem-vite
 
       - name: Build Frontend
         run: npm run build
+        working-directory: ./propertymanagementsystem-vite
 
       # --- Frontend CD Step (Deployment) ---
-      # Add your deployment logic here. This part will only run
-      # on pushes to the 'main' branch, ensuring only
-      # production-ready code is deployed.
-      #
-      # Example for Vercel:
-      # - name: Deploy to Vercel
-      #   if: github.ref == 'refs/heads/main'
-      #   run: |
-      #     npm install --global vercel
-      #     vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      #     vercel build
-      #     vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      # This part will only run on pushes to the 'main' branch
+      - name: Deploy to Vercel
+        if: github.ref == 'refs/heads/main'
+        run: |
+          npm install --global vercel
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        working-directory: ./propertymanagementsystem-vite
