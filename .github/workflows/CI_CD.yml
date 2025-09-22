@@ -19,8 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Use a Node.js version compatible with your project
-          cache: 'npm'
+          node-version: '18'
 
       - name: Install Frontend Dependencies
         run: npm install
@@ -29,9 +28,13 @@ jobs:
         run: npm run build
 
       # --- Frontend CD Step (Deployment) ---
-      # This is a placeholder. You must replace it with your specific deployment logic.
-      # Example for Vercel deployment:
+      # Add your deployment logic here. This part will only run
+      # on pushes to the 'main' branch, ensuring only
+      # production-ready code is deployed.
+      #
+      # Example for Vercel:
       # - name: Deploy to Vercel
+      #   if: github.ref == 'refs/heads/main'
       #   run: |
       #     npm install --global vercel
       #     vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
